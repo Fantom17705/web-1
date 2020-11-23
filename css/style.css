@@ -1,0 +1,600 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.section-page {
+    padding-bottom: 100px;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1230px;
+    margin: 0px auto;
+}
+
+.menu__btn {
+    display: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: none;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 400;
+}
+
+.header {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 50px;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #0e0e0e 0%, rgba(17, 17, 17, 0.850295) 16.53%, rgba(32, 31, 33, 0) 100%);
+    transform: rotate(180deg);
+}
+
+.menu {
+    background: linear-gradient(180deg, #111213 0%, #111213 43.62%, rgba(32, 31, 33, 0) 86.33%);
+    padding: 50px 0px 58px;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.menu__list-item {
+    padding: 0px 13px;
+}
+
+.menu-list-link {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.menu-list-link:hover,
+.menu-list-link--active {
+    color: #85ccdc;
+    text-decoration: underline;
+}
+
+.logo {
+    padding-top: 160px;
+    text-align: center;
+    height: 321px;
+}
+
+.about {
+    padding-bottom: 100px;
+}
+
+.about__inner {
+    display: flex;
+    padding: 0 15px;
+}
+
+.about__info {
+    width: 375px;
+}
+
+.about__text {
+    margin-left: 50px;
+}
+
+.about__info-item {
+    margin-bottom: 25px;
+}
+
+.about__info-item span {
+    display: block;
+}
+
+.about__text p {
+    margin-bottom: 25px;
+}
+
+.video {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: right;
+}
+
+.video__text {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 84px;
+    color: #85ccdc;
+    padding-top: 400px;
+}
+
+.video__text span {
+    display: block;
+    padding-right: 290px;
+}
+
+.video__btn {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 240px;
+}
+
+.video__btn img {
+    margin-right: 12px;
+    height: 100px;
+    width: 100px;
+}
+
+.seasons__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(284px, 1fr));
+    grid-gap: 100px 75px;
+    counter-reset: section;
+}
+
+.seasons__item {
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasons__item:hover .seasons__link {
+    opacity: 1;
+}
+
+.seasons__item:hover::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(14, 14, 14, 0.8);
+}
+
+.seasons__item::before {
+    counter-increment: section;
+    content: "0" counters(section, ".");
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 112px;
+    color: #600e09;
+    position: absolute;
+    left: 0;
+    top: -100px;
+}
+
+.seasons__item:nth-child(n + 10)::before {
+    content: counters(section, ".");
+}
+
+.seasons__link {
+    font-size: 36px;
+    line-height: 42px;
+    padding: 12px 78px;
+    background-color: #0e0e0e;
+    opacity: 0;
+    transition: all 2s;
+    z-index: 2;
+}
+
+.heroes__slider-img {
+    max-width: 775px;
+    object-fit: cover;
+    margin-right: 75px;
+}
+
+.heroes__slider-text {
+    max-width: 350px;
+    min-height: 300px;
+}
+
+.heroes__inner {
+    display: flex;
+}
+
+.heroes__name {
+    margin-bottom: 55px;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 84px;
+    color: #85ccdc;
+}
+
+.heroes__description {
+    margin-bottom: 50px;
+}
+
+.slick-btn {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.slick-prev {
+    left: 37px;
+}
+
+.slick-next {
+    right: 0;
+    right: 37px;
+}
+
+.footer__copy {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* start page season-1 */
+
+.page-header {
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.season__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    max-width: 1383px;
+}
+
+.season__num {
+    padding: 21px 0 0 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.season__num__num {
+    font-size: 96px;
+    line-height: 84px;
+}
+
+.season__num__text {
+    font-size: 36px;
+    line-height: 22px;
+}
+
+.season__text {
+    padding: 44px 47px 0px 45px;
+}
+
+.season-text p {
+    margin-bottom: 15px;
+}
+
+.series-title,
+.seasons-title {
+    margin: 50px 0 150px 0;
+}
+
+.menu__container {
+    max-width: 1385px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.page-logo {
+    position: absolute;
+    margin-top: 34px;
+    margin-left: 80px;
+}
+
+/* start media */
+
+@media (max-width: 1366px) {
+    .page-logo {
+        left: -20px;
+    }
+    .logo__img {
+        width: 50%;
+    }
+
+    .menu-list-link {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .heroes__slider-img {
+        max-width: 580px;
+        max-height: 100vh;
+    }
+    .slick-btn {
+        top: 38%;
+    }
+    .heroes__name {
+        font-size: 58px;
+        line-height: 62px;
+    }
+
+    .page-header {
+        height: 120vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page-logo {
+        display: none;
+    }
+    .about__text,
+    .about__info {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .about__info {
+        width: 225px;
+    }
+    .heroes__slider-img {
+        margin-bottom: 30px;
+        margin-right: 0px;
+    }
+    .heroes__slider-text {
+        max-width: 350px;
+        min-height: 300px;
+    }
+
+    .heroes__inner {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .heroes__name {
+        margin-bottom: 30px;
+        font-size: 38px;
+        line-height: 44px;
+    }
+    .heroes__slider-text {
+        max-width: 550px;
+        min-height: 300px;
+    }
+
+    .heroes__description {
+        margin-bottom: 20px;
+    }
+    .heroes__title {
+        margin-bottom: 50px;
+    }
+    .section-page {
+        padding-bottom: 50px;
+    }
+    .slick-btn {
+        top: 48%;
+    }
+    .season__info {
+        display: block;
+        padding: 30px 10px 0 10px;
+    }
+    .season__text {
+        padding: 0;
+    }
+    .season__num {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .season__num__num {
+        font-size: 70px;
+        line-height: 74px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .about__text,
+    .about__info {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .about__info {
+        width: 150px;
+    }
+    .about {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    .about__title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+
+    .seasons__item::before {
+        counter-increment: section;
+        content: "0" counters(section, ".");
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 86px;
+        color: #600e09;
+        position: absolute;
+        left: 0;
+        top: -80px;
+    }
+
+    .seasons__link {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 12px 78px;
+        background-color: #0e0e0e;
+        opacity: 0;
+        transition: all 2s;
+        z-index: 2;
+    }
+
+    .slick-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .about__inner {
+        display: block;
+    }
+
+    .menu__btn {
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .menu__btn span {
+        background-color: #fff;
+        height: 5px;
+        width: 100%;
+    }
+    .menu__btn::after,
+    .menu__btn::before {
+        content: "";
+        width: 100%;
+        height: 5px;
+        background-color: #fff;
+        position: absolute;
+    }
+    .menu__btn::before {
+        top: 0;
+        left: 0;
+    }
+    .menu__btn::after {
+        bottom: 0;
+        left: 0;
+    }
+
+    .menu {
+        background: linear-gradient(180deg, #111213 0%, #111213 3.62%, rgba(32, 31, 33, 0) 66.33%);
+    }
+    .menu__list {
+        /* display: none; */
+        display: block;
+        text-align: center;
+        transform: translateY(-130%);
+        background: linear-gradient(180deg, #111213 0%, #111213 63.62%, rgba(32, 31, 33, 0) 86.33%);
+        transition: all 0.3s;
+    }
+    .menu-list-link {
+        display: block;
+        padding-top: 10px;
+    }
+    .menu__list.menu__list--active {
+        transform: translateY(0%);
+    }
+    .about__text {
+        margin-left: 0;
+    }
+    .about__info-item {
+        margin-bottom: 0;
+    }
+    .about__text p {
+        margin: 10px 0;
+    }
+
+    .video {
+        text-align: center;
+    }
+
+    .video__text {
+        font-style: italic;
+        font-weight: 300;
+        font-size: 54px;
+        line-height: 64px;
+        color: #85ccdc;
+        padding-top: 444px;
+    }
+
+    .video__text span {
+        display: block;
+        padding-right: 0px;
+    }
+
+    .video__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+    }
+
+    .video__btn img {
+        margin-right: 12px;
+        height: 75px;
+        width: 75px;
+    }
+
+    .page-logo {
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 0px;
+        left: 33%;
+    }
+    .logo {
+        display: none;
+    }
+    .video__text {
+        padding-top: 245px;
+    }
+    .season__text-second {
+        display: none;
+    }
+    .season__num__num {
+        font-size: 55px;
+        line-height: 60px;
+    }
+}
